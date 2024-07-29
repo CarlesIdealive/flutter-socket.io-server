@@ -21,13 +21,28 @@
         });
 
 
-        //EVENTO DEL CLIENTE
-        socket.emit('mensaje', { nombre: 'Fernando', edad: 14});
 
         //Escuchando mensaje
-        socket.on('mensaje', function( payload ){
-            console.log('Escuchando', payload);
+        // socket.on('mensaje', function( payload ){
+        //     console.log('Escuchando', payload);
+        // });
+
+        //Escuchando mensaje
+        socket.on('nuevo-mensaje', function( payload ){
+            console.log('NUEVO MSG: ', payload);
         });
+
+        socket.on('active-bands', function( payload ){
+            console.clear();
+            console.table(payload);
+        });
+
+
+
+        //EVENTO DEL CLIENTE
+        // socket.emit('mensaje', { nombre: 'Fernando', edad: 14});
+
+
 
     </script>
     
